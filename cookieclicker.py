@@ -14,5 +14,16 @@ driver.get("https://orteil.dashnet.org/cookiecliker/")
 
 cookie_id = "bigCookie"
 
+webDrivewait(driver, 5).untill(
+    EC.presence_of_element_located((By.XPATH,"//*[contains(text(), 'English')]"))
+)
+
+language = driver.find_element(By.XPATH,"//*[contains(text(), 'English')]")
+language.click()
+
+webDrivewait(driver, 5).untill(
+    EC.presence_of_element_located((By.ID, cookie_id))
+)
+
 cookie = driver.find_element(By.ID, cookie_id)
 cookie.click()
