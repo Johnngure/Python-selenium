@@ -24,6 +24,12 @@ webDrivewait(driver, 5).untill(
 input_element = driver.find_element(By.CLASS_NAME,"gLFyf")
 input_element.send_keys("Ngure technologies" + Keys.ENTER)
 
+webDrivewait(driver, 5).untill(
+    EC.presence_of_element_located(By.CLASS_NAME,"gLFyf")
+)
+
+link = driver.find_element(By.PARTIAL_LINK_TEXT, "Ngure technologies")
+
 
 time.sleep(20)
 
